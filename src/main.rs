@@ -37,12 +37,11 @@ fn main() -> Result<()> {
     let mut player = Player {
         health: 5,
         x_position: width / 2,
-        y_position: height - 2, 
+        y_position: height - 2,
         sprite: "🐱".to_string(),
     };
 
     while !game_over {
-
         stdout.execute(Clear(ClearType::All))?;
         stdout.execute(MoveTo(0, 0))?;
 
@@ -142,6 +141,14 @@ fn main() -> Result<()> {
             ResetColor,
         )?;
 
+        //display player health
+        execute!(
+            stdout,
+            MoveTo(0, 0),
+            SetForegroundColor(Color::Red), 
+            Print(format!("Health: {}", player.health)),
+            ResetColor 
+        )?;
 
         thread::sleep(frame_time);
     }

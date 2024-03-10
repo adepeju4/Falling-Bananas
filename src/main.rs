@@ -32,7 +32,7 @@ fn main() -> Result<()> {
 
     let mut bananas = vec![]; // Vec<(x, y)>
     let mut rng = thread_rng();
-    let frame_time = Duration::from_millis(50);
+    let frame_time = Duration::from_millis(25);
 
     let mut player = Player {
         health: 5,

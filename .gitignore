@@ -1,0 +1,11 @@
+# Ignore Cargo.lock in a library
+*/Cargo.lock
+
+# Ignore unnecessary Cargo files
+**/target/
+
+# Ignore other files that should not be committed to Git
+*.rs.bk
+
+.vscode/*
+settings.json
